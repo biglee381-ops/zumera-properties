@@ -4,21 +4,21 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          50: '#f5f7fb',
-          100: '#e6eef8',
-          200: '#cbe0f2',
-          300: '#9ecaf0',
-          400: '#5aa7e6',
-          500: '#2b7bd1',
-          600: '#1f559f',
-          700: '#153b73',
-          800: '#0e2a4a',
-          900: '#071623'
+          50: '#e8edf8',
+          100: '#d1daf0',
+          200: '#a8b9e2',
+          300: '#7e98d4',
+          400: '#4f6ec5',
+          500: '#1034a6',
+          600: '#0e2f96',
+          700: '#0b277e',
+          800: '#0a1d4e',
+          900: '#08183f'
         }
       },
       fontFamily: {
-        heading: ['Inter', 'ui-sans-serif', 'system-ui'],
-        body: ['Inter', 'ui-sans-serif', 'system-ui']
+        heading: ['Cormorant Garamond', 'Georgia', 'serif'],
+        body: ['DM Sans', 'ui-sans-serif', 'system-ui']
       }
     }
   },

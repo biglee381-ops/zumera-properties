@@ -1,33 +1,43 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import heroImage from './assets/project_img_1.jpg'
 
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } }
+const entrance = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
 }
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0 }
-}
-
-export default function Hero(){
+export default function Hero() {
   return (
-    <section className="section bg-hero flex items-center" id="hero">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
-        <motion.div initial="hidden" animate="visible" variants={container}>
-          <motion.h1 variants={fadeUp} className="max-w-2xl text-4xl font-heading font-extrabold leading-tight sm:text-5xl md:text-6xl">Zumera Properties LTD</motion.h1>
-          <motion.p variants={fadeUp} className="mt-4 max-w-xl text-base leading-7 text-gray-700 sm:text-lg">Premium residential and commercial properties crafted for modern living. Explore curated homes and bespoke property services.</motion.p>
-          <motion.div variants={fadeUp} className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <a href="#properties" className="btn-primary inline-flex min-h-12 items-center justify-center rounded bg-brand-500 px-6 py-3 text-center text-white shadow hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300">Explore Properties</a>
-            <a href="#contact" className="inline-flex min-h-12 items-center justify-center rounded border border-gray-200 px-6 py-3 text-center hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300">Get in touch</a>
-          </motion.div>
-        </motion.div>
-        <motion.div initial={{opacity:0, scale:0.98}} animate={{opacity:1, scale:1}} transition={{delay:0.15}} className="w-full min-w-0">
-          <div className="overflow-hidden rounded-xl bg-white shadow-xl">
-            <img src="https://images.unsplash.com/photo-1560184897-6a1b6a9b9d1f?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Premium property" className="aspect-[4/3] w-full object-cover sm:aspect-[16/10] md:aspect-[4/3]" />
+    <section className="hero-section" id="hero">
+      <img className="hero-image" src={heroImage} alt="" fetchpriority="high" />
+      <div className="hero-shade" />
+      <div className="hero-grain" />
+      <div className="hero-content page-shell">
+        <motion.div initial="hidden" animate="visible" variants={entrance} className="hero-copy">
+          <span className="eyebrow eyebrow-light"><span className="eyebrow-dot" /> BENIN CITY · EDO STATE · NIGERIA</span>
+          <h1>Places that move<br /><em>you forward.</em></h1>
+          <p className="hero-intro">Property development and considered hospitality, rooted in Africa and made for the way the world wants to live.</p>
+          <div className="hero-actions">
+            <a href="#properties" className="button button-gold">Discover Zumera <span aria-hidden="true">↗</span></a>
+            <a href="#about" className="text-link text-link-light">Our point of view <span aria-hidden="true">↓</span></a>
+          </div>
+          <div className="hero-note">
+            <span className="hero-note-line" />
+            <span>To reveal Africa’s power, freedom and beauty to the world through a new standard of peerless hospitality.</span>
           </div>
         </motion.div>
+        <motion.div
+          className="hero-glass-card glass-panel"
+          initial={{ opacity: 0, y: 20, rotate: 1 }}
+          animate={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          <span className="hero-card-index">01 / OUR WORLD</span>
+          <span className="hero-card-title">A more thoughtful<br />way to arrive.</span>
+          <span className="hero-card-location"><span aria-hidden="true">⌖</span> Benin City, Nigeria</span>
+        </motion.div>
+        <a className="hero-scroll" href="#about"><span /> SCROLL TO EXPLORE</a>
       </div>
     </section>
   )
