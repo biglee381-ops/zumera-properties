@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/zumera-properties/',
   plugins: [react()],
-  server: { port: 5173 }
+  base: '/zumera-properties/', // Must match your repo name exactly
 })
